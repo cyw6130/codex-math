@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "run-math/route-decision-v1",
+  "title": "Run Math route decision",
+  "type": "object",
+  "required": ["schema", "id", "targetId", "createdAt", "rootTargetRef", "activeContractFingerprint", "basedOnProofStateFingerprint", "action"],
+  "properties": {
+    "schema": {"const": "run-math/route-decision-v1"},
+    "id": {"type": "string", "minLength": 1},
+    "targetId": {"type": "string", "minLength": 1},
+    "createdAt": {"type": "string", "minLength": 1},
+    "rootTargetRef": {"type": "string", "minLength": 1},
+    "activeContractFingerprint": {"type": "string", "minLength": 1},
+    "basedOnProofStateFingerprint": {"type": "string", "minLength": 1},
+    "action": {"enum": ["dispatch", "ask_user", "stop"]},
+    "tasks": {"type": "array", "items": {"$ref": "#/$defs/task"}},
+    "grilling": {"$ref": "#/$defs/grilling"},
+    "stopReason": {"enum": ["root_completed", "budget_exhausted", "blocked", "no_viable_route", "user_stop"]}
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {"if": {"properties": {"action": {"const": "dispatch"}}}, "then": {"required": ["tasks"], "properties": {"tasks": {"minItems": 1}}, "not": {"anyOf": [{"required": ["grilling"]}, {"required": ["stopReason"]}]}}},
+    {"if": {"properties": {"action": {"const": "ask_user"}}}, "then": {"required": ["grilling"], "not": {"anyOf": [{"required": ["tasks"]}, {"required": ["stopReason"]}]}}},
+    {"if": {"properties": {"action": {"const": "stop"}}}, "then": {"required": ["stopReason"], "not": {"anyOf": [{"required": ["tasks"]}, {"required": ["grilling"]}]}}}
+  ],
+  "$defs": {
+    "task": {
+      "type": "object",
+      "required": ["taskId", "dialogueRef", "obligationId", "routeId", "claim", "routeRole", "expectedProofProgressEffect", "premiseRefs", "successEffect", "failureEffect", "noveltyStatus", "mayCountAsRootCompletion", "premiseMode"],
+      "properties": {
+        "taskId": {"type": "string", "minLength": 1},
+        "dialogueRef": {"type": "string", "minLength": 1},
+        "obligationId": {"type": "string", "minLength": 1},
+        "routeId": {"type": "string", "minLength": 1},
+        "claim": {"type": "string", "minLength": 1},
+        "routeRole": {"enum": ["prove", "adversarial_review", "alternative_route", "premise_audit", "finite_certificate", "counterexample_search", "literature_boundary"]},
+        "expectedProofProgressEffect": {"enum": ["close", "reduce", "split", "refute_route", "verify_premise", "identify_missing_hypothesis", "construct_certificate", "audit_dependency", "reproduce_known"]},
+        "premiseRefs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "premiseMode": {"enum": ["accepted_only", "conditional_exploration"]},
+        "successEffect": {"type": "string", "minLength": 1},
+        "failureEffect": {"type": "string", "minLength": 1},
+        "noveltyStatus": {"enum": ["known", "open", "conditional", "disputed", "unchecked"]},
+        "mayCountAsRootCompletion": {"type": "boolean"},
+        "transferToObligationId": {"type": "string", "minLength": 1},
+        "transferMechanism": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "grilling": {
+      "type": "object",
+      "required": ["skill", "reason", "questions"],
+      "properties": {
+        "skill": {"const": "grilling"},
+        "reason": {"type": "string", "minLength": 1},
+        "questions": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+      },
+      "additionalProperties": false
+    }
+  }
+}

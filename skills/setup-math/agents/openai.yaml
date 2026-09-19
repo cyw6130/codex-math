@@ -1,0 +1,4 @@
+interface:
+  display_name: "配置 Codex 数学研究"
+  short_description: "配置对话和预算，先询问本地材料选择，再初始化研究或仅保留配置。"
+  default_prompt: "请使用 $setup-math 配置研究，初始化前先与我确定是否使用本地文件。"

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Codex Math 术语查询"
+  short_description: "解释本版工作流概念、关键区别与验证状态"
+  default_prompt: "请使用 $dictionary 解释研究轮次、数学 Commit 和事实文章发布的区别。"
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,4 @@
+interface:
+  display_name: "独立审核数学文章"
+  short_description: "独立审计增量、核对事实文章整合，或审核派生论文。"
+  default_prompt: "请使用 $review-math-article 按本套装协议完成当前对应步骤。"

@@ -1,0 +1,4 @@
+interface:
+  display_name: "准备文章增量"
+  short_description: "轮末整理数学增量，完整事实文章留到 Commit 后维护。"
+  default_prompt: "请使用 $prepare-math-increment 按本套装协议完成当前对应步骤。"

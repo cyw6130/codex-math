@@ -1,0 +1,4 @@
+interface:
+  display_name: "初始化事实工作区"
+  short_description: "从确认并有审核依据的数学文章建立可迁移事实工作区，或恢复已有工作区。"
+  default_prompt: "请使用 $initializing 按本套装协议完成当前对应步骤。"

@@ -1,0 +1,243 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Codex Math · 推进、理解与再出发",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "viewBox": [
+      1233,
+      528
+    ]
+  },
+  "lanes": [
+    {
+      "id": "research",
+      "label": "推理与接纳"
+    },
+    {
+      "id": "understanding",
+      "label": "文章与共同理解"
+    },
+    {
+      "id": "outputs",
+      "label": "用户选择后继续"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "setup",
+      "lane": "research",
+      "col": 0,
+      "label": "配置并绑定三个任务",
+      "sublabel": "setup-math",
+      "type": "frontend",
+      "width": 150
+    },
+    {
+      "id": "reason",
+      "lane": "research",
+      "col": 1,
+      "label": "讨论并调度三个任务",
+      "sublabel": "run-math",
+      "type": "backend",
+      "width": 150
+    },
+    {
+      "id": "delta",
+      "lane": "research",
+      "col": 2,
+      "label": "整理候选增量",
+      "sublabel": "prepare-math-increment",
+      "type": "backend",
+      "width": 150
+    },
+    {
+      "id": "audit",
+      "lane": "research",
+      "col": 3,
+      "label": "独立审核数学增量",
+      "sublabel": "review-math-article",
+      "type": "security",
+      "width": 150
+    },
+    {
+      "id": "commit",
+      "lane": "research",
+      "col": 4,
+      "label": "接纳数学结果",
+      "sublabel": "commit-research",
+      "type": "database",
+      "width": 150
+    },
+    {
+      "id": "article",
+      "lane": "understanding",
+      "col": 4,
+      "label": "维护并发布事实文章",
+      "sublabel": "maintain-math-article",
+      "type": "backend",
+      "width": 150
+    },
+    {
+      "id": "understand",
+      "lane": "understanding",
+      "col": 3,
+      "label": "回顾目标 · 梳理证明",
+      "sublabel": "understand-research",
+      "type": "frontend",
+      "width": 150
+    },
+    {
+      "id": "choice",
+      "lane": "understanding",
+      "col": 2,
+      "label": "理解后选择方向",
+      "sublabel": "grilling",
+      "type": "frontend",
+      "width": 150
+    },
+    {
+      "id": "pause",
+      "lane": "understanding",
+      "col": 0,
+      "label": "暂不继续",
+      "sublabel": "保存理解记录",
+      "type": "frontend",
+      "width": 150
+    },
+    {
+      "id": "extract",
+      "lane": "outputs",
+      "col": 2,
+      "label": "从准确文章提图",
+      "sublabel": "to-map",
+      "type": "backend",
+      "width": 150
+    },
+    {
+      "id": "mapaudit",
+      "lane": "outputs",
+      "col": 3,
+      "label": "轻量独立核图",
+      "sublabel": "map-review",
+      "type": "security",
+      "width": 150
+    },
+    {
+      "id": "blueprint",
+      "lane": "outputs",
+      "col": 4,
+      "label": "Lean 蓝图 / 按需形式化",
+      "sublabel": "formalize-research",
+      "type": "external",
+      "width": 150
+    }
+  ],
+  "mainPath": [
+    "setup",
+    "reason",
+    "delta",
+    "audit",
+    "commit",
+    "article"
+  ],
+  "edges": [
+    {
+      "from": "setup",
+      "to": "reason",
+      "role": "main",
+      "label": "用户启动研究"
+    },
+    {
+      "from": "reason",
+      "to": "delta",
+      "role": "main",
+      "label": "本轮有增量"
+    },
+    {
+      "from": "delta",
+      "to": "audit",
+      "role": "main"
+    },
+    {
+      "from": "audit",
+      "to": "commit",
+      "role": "main",
+      "label": "通过"
+    },
+    {
+      "from": "commit",
+      "to": "article",
+      "role": "main"
+    },
+    {
+      "from": "article",
+      "to": "understand",
+      "role": "main",
+      "label": "整批结束"
+    },
+    {
+      "from": "understand",
+      "to": "choice",
+      "role": "main",
+      "label": "共同理解后"
+    },
+    {
+      "from": "choice",
+      "to": "pause",
+      "role": "branch",
+      "label": "暂不继续"
+    },
+    {
+      "from": "choice",
+      "to": "extract",
+      "role": "branch",
+      "label": "选建图"
+    },
+    {
+      "from": "extract",
+      "to": "mapaudit",
+      "role": "main"
+    },
+    {
+      "from": "mapaudit",
+      "to": "blueprint",
+      "role": "branch",
+      "label": "按需形式化"
+    },
+    {
+      "id": "continue-research",
+      "from": "choice",
+      "to": "reason",
+      "role": "return",
+      "label": "继续研究 · 商定方向与预算"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Main 编排每轮，三个 session 主推理",
+      "items": [
+        "首轮 grilling 商定目标与路线；Main 编排三个 Codex session 推理，再独立审核、Commit、维护事实文章。",
+        "模型与强度在 setup 中选择，之后可自行修改；预算内续轮，无增量只保存总结。"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "理解之后，可以直接继续研究",
+      "items": [
+        "继续同一目标，或先讨论新方向，再交回 run-math；预算耗尽时明确新增轮数。",
+        "不需要先建图，也不需要重做 setup。Main 处理修订，独立审核不由理解确认替代。"
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "建图、形式化与查看均按需",
+      "items": [
+        "理解后也可选择建图或暂停；map-review 通过后发布地图，按需进入形式化。",
+        "view-map / view-trajectory 可单独查看；建图后仍可回到 run-math 继续研究。"
+      ]
+    }
+  ]
+}

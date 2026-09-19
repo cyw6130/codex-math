@@ -1,0 +1,4 @@
+interface:
+  display_name: "审核数学地图"
+  short_description: "独立核对新增及受影响条目的来源、完整陈述与覆盖，区分必要修复和表达建议。"
+  default_prompt: "请使用 $map-review 核对当前地图变化的来源忠实性、条目质量与覆盖。"

@@ -1,0 +1,70 @@
+{
+  "schema": "cmath.capability-manifest/v1",
+  "id": "research-trajectory-view-v1",
+  "version": "v1",
+  "title": "研究轨迹回放视图",
+  "status": "candidate",
+  "kind": "view",
+  "responsibility": "在既有图画布上呈现研究轨迹的逐步回放：步进时间线、路线状态 R、本步产出高亮与假目标标记。",
+  "summary": "把已算好的轨迹数据画成可回放的图，不判定任何数学。",
+  "provides": [
+    {
+      "port": "cmath.research-trajectory-view/v1",
+      "contract": "cmath.research-trajectory-view/v1"
+    }
+  ],
+  "requires": [],
+  "dependencies": [],
+  "runtime": {
+    "kind": "browser-global",
+    "preload": [
+      "src/bundle-contract.js",
+      "src/replay-state.js",
+      "src/trajectory-style.js",
+      "src/trajectory-canvas.js"
+    ],
+    "entrypoint": "src/index.js"
+  },
+  "provenance": {
+    "capabilityId": "cmath.research-trajectory-view/v1",
+    "sourceProjects": [
+      "cmath-benchmark"
+    ]
+  },
+  "permissions": {
+    "read": [],
+    "write": [],
+    "network": false,
+    "process": false
+  },
+  "stateEffects": [],
+  "authority": {
+    "formalMath": "none",
+    "humanDecisions": false
+  },
+  "acceptanceTests": [
+    "tests/bundle_contract.test.mjs",
+    "tests/project_current.test.mjs",
+    "tests/project_history.test.mjs",
+    "tests/replay_state.test.mjs",
+    "tests/replay_view.test.mjs",
+    "tests/trajectory_style.test.mjs"
+  ],
+  "constraints": [
+    "不定义数学对象语义",
+    "不拥有项目数据",
+    "不判定 Claim 状态，一律照抄输入",
+    "不执行装配与打包",
+    "不复用 graph-core-v1：回放需要逐步重绘语义，自绘画布"
+  ],
+  "domain": "math-map",
+  "role": "presentation",
+  "currentProjection": {
+    "entrypoint": "src/project-current.js",
+    "export": "projectCurrent",
+    "requires": [
+      "cmath.research-draft-lifecycle/v1",
+      "cmath-gamma.math-map-semantics/v3"
+    ]
+  }
+}

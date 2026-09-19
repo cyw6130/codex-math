@@ -1,0 +1,54 @@
+{
+  "schema": "cmath.capability-manifest/v1",
+  "id": "math-graph-semantics-v3",
+  "version": "v3",
+  "title": "Math Map State Space",
+  "status": "candidate",
+  "kind": "module",
+  "responsibility": "定义严格数学状态 M 的合法结构，并确定性派生 Closure、Claim 三态、见证与开放阻塞诊断。",
+  "summary": "定义 formal Entry、Inference、NegationPair、B0 及严格 Claim Closure。",
+  "provides": [
+    {
+      "port": "cmath-gamma.math-map-semantics/v3",
+      "contract": "cmath-gamma.math-map-semantics/v3"
+    },
+    {
+      "port": "cmath.math-map-state/v3",
+      "contract": "cmath.math-map-state/v3"
+    }
+  ],
+  "requires": [],
+  "dependencies": [],
+  "runtime": {
+    "kind": "browser-global-or-commonjs",
+    "entrypoint": "src/index.js"
+  },
+  "provenance": {
+    "capabilityId": "cmath-gamma.math-map-semantics/v3",
+    "sourceProjects": [
+      "cmath-gamma",
+      "cmath-harness"
+    ]
+  },
+  "permissions": {
+    "read": [],
+    "write": [],
+    "network": false,
+    "process": false
+  },
+  "stateEffects": [],
+  "authority": {
+    "formalMath": "read",
+    "humanDecisions": false
+  },
+  "acceptanceTests": [
+    "tests/math_graph_semantics.test.mjs"
+  ],
+  "constraints": [
+    "Does not own drafts, review, governance, persistence, provenance, Route state, presentation, or mathematical truth review",
+    "All objects supplied in M are formal by construction",
+    "Does not mutate or replace math-graph-semantics-v2"
+  ],
+  "domain": "math-map",
+  "role": "state"
+}

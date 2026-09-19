@@ -1,0 +1,16 @@
+{
+  "name": "codex-math",
+  "private": true,
+  "scripts": {
+    "test": "node --test",
+    "validate:routing": "node tools/validate-proof-routing.mjs",
+    "check:suite": "python3 tools/check_suite.py",
+    "validate:research": "node tools/validate-research.mjs"
+  },
+  "version": "0.1.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cyw6130/codex-math.git"
+  }
+}

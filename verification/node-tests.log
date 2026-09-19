@@ -1,0 +1,63 @@
+
+> codex-math@0.1.0 test
+> node --test
+
+✔ 探索可从自然问题开始而没有根命题 (2.602709ms)
+✔ 有证据的问题细化可为理解进展而无需已接纳定理 (0.280125ms)
+✔ 空泛理解进展与错误理论完成均被拒绝 (0.198542ms)
+✔ 未确认范围变化和过时决定被拒绝 (0.112916ms)
+✔ 已批准新范围保留旧问题历史，但不能重新派发旧问题 (0.244125ms)
+✔ 未审核的观察不能充当证明前提 (0.097417ms)
+✔ 预算不能自动增加，合法提前停止不要求全理论完成 (0.146584ms)
+✔ 有待发布事务时禁止探索派发 (0.109875ms)
+✔ malformed mode state and unknown schema fail closed (0.09525ms)
+✔ map command records successful real validation (80.560375ms)
+✔ map command records failed real validation (59.540209ms)
+✔ accepts a The Proof-style finite certificate route while the root remains open (4.404666ms)
+✔ rejects spending budget on a figure-eight special case without a transfer bridge (0.528125ms)
+✔ accepts a special case only when it has an explicit transfer bridge (0.2445ms)
+✔ rejects reproduce_known without a transfer bridge and accepts it with one (0.305917ms)
+✔ rejects a conditional premise from claiming root completion (0.148208ms)
+✔ rejects changing the active contract fingerprint without a grilling revision (0.279333ms)
+✔ rejects a route decision based on a stale proof-state fingerprint (0.244583ms)
+✔ rejects a dispatch task that omits route lineage (0.159959ms)
+✔ rejects reviving a refuted route without accepted new input (0.234458ms)
+✔ accepts an ask_user decision with the grilling skill (0.332458ms)
+✔ rejects stop root_completed when proof state root is not closed and complete (0.904167ms)
+✔ 复用已有阅读器页面 pages/pure-graph-view.html (2.8055ms)
+✔ 复用已有阅读器页面 pure-graph-view.html (1.624875ms)
+✔ 阅读器缺失时报告，不生成替代前端 (2.524833ms)
+✔ 概览不绘制标签，放大后绘制，节点始终保留 (0.840041ms)
+✔ 准确新增集合驱动黄色节点和连边，不把已有结论附带染黄 (0.881833ms)
+✔ 前后翻步不会残留上一帧的黄色 (1.818167ms)
+✔ 点击区域跟随屏幕节点大小，历史中尚未出现的节点不可点击 (0.180375ms)
+✔ 复用 view-map 公式渲染，Markdown 段落不会破坏多行公式 (7.399625ms)
+✔ 原文 HTML 只作为文本，不执行脚本或生成外部请求 (0.43525ms)
+✔ 命名按原对象 ID 稳定分配，翻步、修订、追加不改变已有显示编号 (9.23275ms)
+✔ 侧栏关系使用数学名称，原始 ID 折叠，切换对象回到顶部 (2.783208ms)
+✔ 真实不同地图不混并同名对象，不虚构 Snapshot 或路线 (3.137375ms)
+✔ 空历史没有造图；坏地图拒绝 (0.137084ms)
+✔ 对象名称碰巧是数学状态关键词时不改写语义 (0.170458ms)
+✔ 新增高亮只列新 ID，未变对象跨版本复用，修订对象保留历史 (8.943791ms)
+✔ 修复未审地图缺项时只标图上新增，不把整张图染黄 (0.184333ms)
+✔ derives the established Claim closure and its direct proof witnesses (6.045709ms)
+✔ explains every blocked proof path for open Claims (0.205917ms)
+✔ derives refuted from an established paired Negative Claim (0.109375ms)
+✔ rejects a state whose Negation Pair endpoints both enter Closure (0.220125ms)
+✔ rejects structures outside the closed Math Map State Space (2.886042ms)
+✔ derives deterministically without mutating the strict mathematical state (0.197125ms)
+✔ publishes the same deep interface as a browser runtime asset (1.699833ms)
+✔ accepts concept-forming organization but excludes it from Closure (0.162709ms)
+✔ rejects organization cycles while proof cycles require an external entry (0.181584ms)
+✔ returns every available direct proof as an alternative witness (0.112625ms)
+✔ treats Negation Pair identity as unordered and one-to-one (0.1465ms)
+✔ publishes a candidate canonical manifest and the confirmed contract (0.34275ms)
+✔ preserves every contract-valid opaque ID without prototype or pair-key collisions (0.098125ms)
+ℹ tests 51
+ℹ suites 0
+ℹ pass 51
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 293.086209

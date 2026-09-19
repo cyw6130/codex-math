@@ -1,0 +1,6 @@
+interface:
+  display_name: "单次数学研究"
+  short_description: "显式启动一次数学研究，冻结基线、保存证据，默认保留候选并共同理解，Commit 需明确请求。"
+  default_prompt: "请使用 $advancing 对当前选定问题完成一次有边界的数学研究，并整理结果与剩余问题。"
+policy:
+  allow_implicit_invocation: false

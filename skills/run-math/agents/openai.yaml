@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex 数学证明与探索"
+  short_description: "首次先共同商定目标与首轮路线，再开展有界 Codex 推理、按轮审核与文章维护。"
+  default_prompt: "请使用 $run-math 开展研究；若尚未商定目标与首轮路线，先用 grilling 与我讨论。"

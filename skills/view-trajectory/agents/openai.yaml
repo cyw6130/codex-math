@@ -1,0 +1,4 @@
+interface:
+  display_name: "查看真实研究历程"
+  short_description: "用原有图形时间线查看各轮冻结基线、总结与真实记录。"
+  default_prompt: "请使用 $view-trajectory 按本套装协议完成当前对应步骤。"

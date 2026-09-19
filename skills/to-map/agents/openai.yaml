@@ -1,0 +1,4 @@
+interface:
+  display_name: "提取数学地图"
+  short_description: "从已接纳准确事实全文提取数学地图，逐对象核对来源并运行随套装提供的语义校验器。"
+  default_prompt: "请使用 $to-map 按本套装协议完成当前对应步骤。"

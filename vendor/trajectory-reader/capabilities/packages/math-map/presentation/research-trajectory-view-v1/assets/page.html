@@ -1,0 +1,31 @@
+<header>
+  <h1>研究轨迹回放<small>CMATH · TRAJECTORY REPLAY</small></h1>
+  <select id="pick" aria-label="选择样本"></select>
+  <div class="profile" id="profile"></div>
+</header>
+<main>
+  <div id="stage" tabindex="0" aria-label="数学地图">
+    <div id="fgHost"></div>
+    <div class="overlay" id="legend">点击节点查看对象 · 放大后显示标签</div>
+  </div>
+  <aside>
+    <div class="tabs" role="tablist">
+      <button id="tabR" role="tab" aria-selected="true" type="button">路线状态 R</button>
+      <button id="tabD" role="tab" aria-selected="false" type="button">对象详情</button>
+    </div>
+    <div class="pane" id="paneR"></div>
+    <div class="pane" id="paneD" hidden><p class="none">点击图中对象查看详情。</p></div>
+  </aside>
+</main>
+<footer>
+  <div id="now"></div>
+  <div id="tl"></div>
+  <div class="ctl">
+    <button type="button" data-go="-1">← 上一步</button>
+    <button type="button" class="primary" data-go="1">下一步 →</button>
+    <button type="button" id="reset">回到开头</button>
+    <button type="button" id="end">全部走完</button>
+    <button type="button" id="fit">适配画布</button>
+    <span class="spacer"></span><span class="kbd">← → 翻步 · Home / End 首尾</span>
+  </div>
+</footer>

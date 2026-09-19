@@ -1,0 +1,4 @@
+interface:
+  display_name: "发布事实文章与地图"
+  short_description: "Commit 后维护完整事实文章，核对整合后更新数学地图。"
+  default_prompt: "请使用 $maintain-math-article 按本套装协议完成当前对应步骤。"

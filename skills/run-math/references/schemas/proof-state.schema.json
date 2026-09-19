@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "run-math/proof-state-v1",
+  "title": "Run Math proof state",
+  "type": "object",
+  "required": ["schema", "targetId", "fingerprint", "rootTarget", "activeContractFingerprint", "contractRevisions", "knowledgeBoundary", "obligations", "routes", "frontierObligationIds", "acceptedResults", "researchOutcome"],
+  "properties": {
+    "schema": {"const": "run-math/proof-state-v1"},
+    "targetId": {"type": "string", "minLength": 1},
+    "fingerprint": {"type": "string", "minLength": 1},
+    "rootTarget": {"$ref": "#/$defs/rootTarget"},
+    "activeContractFingerprint": {"type": "string", "minLength": 1},
+    "contractRevisions": {"type": "array", "items": {"$ref": "#/$defs/contractRevision"}},
+    "knowledgeBoundary": {"$ref": "#/$defs/knowledgeBoundary"},
+    "obligations": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/obligation"}},
+    "routes": {"type": "array", "items": {"$ref": "#/$defs/route"}},
+    "frontierObligationIds": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "acceptedResults": {"type": "array", "items": {"$ref": "#/$defs/acceptedResult"}},
+    "researchOutcome": {"enum": ["root_completed", "proof_advanced", "route_refuted", "no_verified_progress", "invalidated"]}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "rootTarget": {
+      "type": "object",
+      "required": ["id", "verbatimUserGoal", "sourceRequestRef", "statement", "scope", "normalizationBoundary", "fingerprint"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "verbatimUserGoal": {"type": "string", "minLength": 1},
+        "sourceRequestRef": {"type": "string", "minLength": 1},
+        "statement": {"type": "string", "minLength": 1},
+        "scope": {"type": "string"},
+        "normalizationBoundary": {"type": "string"},
+        "fingerprint": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "contractRevision": {
+      "type": "object",
+      "required": ["revisionId", "grillingEvidence", "approvedAt", "newContractFingerprint"],
+      "properties": {
+        "revisionId": {"type": "string", "minLength": 1},
+        "grillingEvidence": {"type": "string", "minLength": 1},
+        "approvedAt": {"type": "string", "minLength": 1},
+        "newContractFingerprint": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "knowledgeBoundary": {
+      "type": "object",
+      "required": ["knowledgeStatus", "knownResultsBoundary", "sourceRefs", "routeImplication"],
+      "properties": {
+        "knowledgeStatus": {"enum": ["known", "open", "conditional", "disputed", "unchecked"]},
+        "knownResultsBoundary": {"type": "string"},
+        "sourceRefs": {"type": "array", "items": {"type": "string"}},
+        "checkedAt": {"type": "string"},
+        "routeImplication": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "obligation": {
+      "type": "object",
+      "required": ["id", "statement", "relationKind", "relationToRoot", "dependencies", "status", "supportRefs", "currentGap"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "statement": {"type": "string", "minLength": 1},
+        "relationKind": {"enum": ["root", "lemma", "equivalent", "necessary_condition", "special_case", "counterexample", "bridge", "audit"]},
+        "relationToRoot": {"type": "string", "minLength": 1},
+        "dependencies": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "status": {"enum": ["open", "candidate", "closed", "refuted", "blocked", "superseded"]},
+        "supportRefs": {"type": "array", "items": {"type": "string"}},
+        "currentGap": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "route": {
+      "type": "object",
+      "required": ["id", "obligationId", "status", "newInputRefs"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "obligationId": {"type": "string", "minLength": 1},
+        "status": {"enum": ["active", "blocked", "refuted", "superseded", "paused"]},
+        "newInputRefs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+      },
+      "additionalProperties": false
+    },
+    "acceptedResult": {
+      "type": "object",
+      "required": ["id", "status"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "status": {"enum": ["accepted", "conditional", "invalidated", "superseded"]}
+      },
+      "additionalProperties": false
+    }
+  }
+}

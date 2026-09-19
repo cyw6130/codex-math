@@ -1,0 +1,4 @@
+interface:
+  display_name: "查看数学地图"
+  short_description: "只读解析当前已发布数学地图并调用已有交互阅读器；核对版本、哈希与待发布状态，不生成新前端。"
+  default_prompt: "请使用 $view-map 按本套装协议完成当前对应步骤。"

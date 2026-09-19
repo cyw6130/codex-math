@@ -1,0 +1,4 @@
+interface:
+  display_name: "自动接纳轮次结果"
+  short_description: "推理轮结束后独立审计并接纳增量，交接文章与地图维护。"
+  default_prompt: "请使用 $commit-research 按本套装协议完成当前对应步骤。"

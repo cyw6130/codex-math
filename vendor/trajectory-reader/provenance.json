@@ -1,0 +1,25 @@
+{
+  "source": "math-research-skill-os/1.12.0",
+  "release": "1.12.0",
+  "files": {
+    "pin-manifest.json": "c72660c2aa149209fc0fd86973c9a7b41933b9aa6334aad003a8b7b75682e295",
+    "os/process-panel.js": "a3e28daefa78b590379a5b17c978eb5a61066ac337fde2e528a0f1771b8a69ee",
+    "os/process-panel.css": "9cb3069afd2e88a5d96b667d4da18c7a133ad99c19fe7bfbb222cda8b746c415",
+    "capabilities/packages/research-project/state/research-draft-lifecycle-v1/src/index.js": "07466fa0b18ad3c9b72f9fe0bb1ab5c07706ce56e9dd24b66b0d6e37155253d3",
+    "capabilities/packages/math-map/presentation/research-trajectory-view-v1/manifest.json": "1e62e0f61000f28d05f9b36f5df2abfd53daecb6eeedd0a661e849706ce632bd",
+    "capabilities/packages/math-map/presentation/research-trajectory-view-v1/assets/page.html": "fe957ae9cd15bcaf000b63108d842775d23b6df83d14d1344145bb3aa2ebba2d",
+    "capabilities/packages/math-map/presentation/research-trajectory-view-v1/assets/style.css": "5251ebe37055a6cd9013a24701858d94f72c169c6b456f5e59f75d4b838d3313",
+    "capabilities/packages/math-map/presentation/research-trajectory-view-v1/src/project-current.js": "7801b53cd0f68fb3c5ca04b262501769fa4e50290451a8abe0f6d33c65619eea",
+    "capabilities/packages/math-map/presentation/research-trajectory-view-v1/src/replay-state.js": "85ed0dd0a50e7c62f201f5a66e55fcfa4f5419fa2817d9770da0de180a8e73da",
+    "capabilities/packages/math-map/presentation/research-trajectory-view-v1/src/trajectory-style.js": "bf4ddf2f05c0461ce77de12442e2dd2dd426c56ad2e2aee9417a935a9ed7bcb3",
+    "capabilities/packages/math-map/presentation/research-trajectory-view-v1/src/index.js": "d38d2521c62de6d0e60c40b449eb3b6daa0b4316250be42fa330b803f920f412",
+    "capabilities/packages/math-map/presentation/research-trajectory-view-v1/src/project-history.js": "d2e81092ebf3741a98241efba6355cc093dca603bd15e062eb9e9c247f51d4a0",
+    "capabilities/packages/math-map/presentation/research-trajectory-view-v1/src/trajectory-canvas.js": "442b6ab634b78bd286526bff64a710cfbcff8bb7cda6c26d67e2d6707b199377",
+    "capabilities/packages/math-map/presentation/research-trajectory-view-v1/src/bundle-contract.js": "b0837b6b4e2d7b8923c04decdedefbd10aab8bb373d2a8d1b719886620086f1b",
+    "capabilities/packages/math-map/presentation/graph-core-v1/variants/cmath-harness/assets/vendor/force-graph/force-graph.min.js": "1008539bb9e171a0dc343453366451a1b3a6ded06028ef4f978608b658ba2d0a",
+    "capabilities/packages/math-map/state/math-graph-semantics-v3/src/index.js": "092174e8451893d8ab4c7a3a36acd2b097c3dd8ce3fcb78b292c78e9d1cd146a",
+    "capabilities/packages/math-map/transition/math-state-transition-v1/src/index.js": "3203cc6d2cbeecd307707b06db61d8c146192f1da5e82abf9d53299e7c561f47",
+    "capabilities/packages/math-route/state/route-state-v3/src/index.js": "345f758fc6bb92c9b13a60e25a42237110699e2ac139d0c166f41bc7b9641832",
+    "capabilities/packages/math-route/transition/route-state-transition-v2/src/index.js": "2960e0fbc05ef01c9d2e695f72d1a606746b3eef9a8747d16037b29d660795e3"
+  }
+}

@@ -1,0 +1,6 @@
+interface:
+  display_name: "共享 Issue"
+  short_description: "整理想法、规划与已完成变更，查重并确认发布"
+  default_prompt: "使用 $issue 整理这个想法、规划或已完成变更，先澄清并确认是否发布到共享 Issue。"
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,19 @@
+/* OS process metadata stays secondary to the pinned trajectory reader. */
+#app{display:flex;flex-direction:column;flex:1;min-height:0}
+#process-note{padding:3px 9px;border:1px solid var(--line);border-radius:7px;background:var(--panel);color:var(--muted);cursor:pointer;font-size:11px}
+#process-note.has-warning{color:var(--accent)}
+#paneP{min-height:0}
+#paneP p{margin:7px 0;font-size:12px;overflow-wrap:anywhere}
+#paneP .process-summary{color:var(--muted);font-size:11px}
+#process-select{width:100%;margin:8px 0;padding:7px 8px;border:1px solid var(--line);border-radius:7px;background:var(--panel);color:var(--ink);font:inherit;font-size:12px}
+#process-detail details{margin-top:9px;font-size:11px;color:var(--muted);overflow-wrap:anywhere}
+#process-detail summary{cursor:pointer}
+#process-detail .warning{color:var(--accent)}
+#process-detail .provenance{font-family:ui-monospace,monospace;white-space:pre-wrap;font-size:10px}
+#missing-graph{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px;text-align:center;background:var(--ground)}
+#missing-graph strong{font-size:15px;font-weight:500;color:var(--ink)}
+#missing-graph p{max-width:280px;font-size:12px;color:var(--muted);line-height:1.8}
+#missing-graph button{padding:6px 12px;border:1px solid var(--line);border-radius:7px;background:var(--panel);color:var(--ink);cursor:pointer;font-size:12px}
+#app.missing-frame #fgHost,#app.missing-frame #legend,#app.missing-frame .selection-title{visibility:hidden}
+#app.missing-frame #profile{visibility:hidden}
+@media(max-width:900px){#process-note{margin-left:auto}.profile{flex-basis:auto;justify-content:flex-end}#paneP p{font-size:11px}}
